@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Trang chủ - LibraryMS{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="small-title">WELCOME TO LIBRARYMS</p>
+
+        <h1>
+            Quản lý thư viện
+            <span>đơn giản và hiện đại</span>
+        </h1>
+
+        <p class="hero-text">
+            Quản lý sách, theo dõi tình trạng sách và tìm kiếm
+            thông tin sách một cách nhanh chóng.
+        </p>
+
+        <a href="{{ url_for('books') }}" class="btn">
+            Xem danh sách sách →
+        </a>
+
+    </div>
+
+    <div class="hero-icon">
+        📚
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-title">
+        <p class="small-title">OVERVIEW</p>
+        <h2>Tổng quan thư viện</h2>
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">📚</div>
+
+            <div>
+                <p>Tổng số đầu sách</p>
+                <h3>{{ total_books }}</h3>
+            </div>
+        </div>
+
+
+        <div class="stat-card available">
+            <div class="stat-icon">✓</div>
+
+            <div>
+                <p>Sách sẵn sàng cho mượn</p>
+                <h3>{{ available_books }}</h3>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="info-box">
+
+    <div>
+        <h2>Khám phá kho sách</h2>
+
+        <p>
+            Xem toàn bộ sách trong thư viện và lọc theo từng thể loại.
+        </p>
+    </div>
+
+    <a href="{{ url_for('books') }}" class="btn btn-light">
+        Xem sách
+    </a>
+
+</section>
+
+{% endblock %}

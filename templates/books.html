@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Danh sách sách{% endblock %}
+
+{% block content %}
+
+<h2>📚 Danh sách sách</h2>
+
+<div class="book-list">
+
+    {% for book in books %}
+
+    <div class="book-card">
+
+        <h3>{{ book.title }}</h3>
+
+        <p><strong>Tác giả:</strong> {{ book.author }}</p>
+
+        <p><strong>Năm:</strong> {{ book.year }}</p>
+
+        <p><strong>Thể loại:</strong> {{ book.category }}</p>
+
+        {% if book.available %}
+            <p class="available">✓ Sẵn sàng cho mượn</p>
+        {% else %}
+            <p class="unavailable">✗ Đã được mượn</p>
+        {% endif %}
+
+        <a href="{{ url_for('book_detail', book_id=book.id) }}">
+            Xem chi tiết
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

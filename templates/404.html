@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}404 - Không tìm thấy - LibraryMS{% endblock %}
+
+{% block content %}
+
+<div class="error-page">
+
+    <div class="error-number">
+        404
+    </div>
+
+    <div class="error-icon">
+        📚
+    </div>
+
+    <h1>Không tìm thấy</h1>
+
+    <p>
+        {{ message }}
+    </p>
+
+    <div class="error-buttons">
+
+        <a href="{{ url_for('home') }}" class="btn">
+            Về trang chủ
+        </a>
+
+        <a href="{{ url_for('books') }}" class="btn btn-outline">
+            Xem danh sách sách
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
